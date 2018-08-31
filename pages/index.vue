@@ -9,8 +9,9 @@
         自己点検システム
       </h2>
       <div class="links">
-        <nuxt-link to="/questionA" tag="a" class="button--green">アンケートA</nuxt-link>
-        <nuxt-link to="/questionB" tag="a" class="button--grey">アンケートB</nuxt-link>
+        <div :key="object.title" v-for="object in data.data">
+          <nuxt-link :to="{ name: 'question-id', params: {id: object.id} }" tag="a" class="button--grey">{{ object.title }}</nuxt-link>
+        </div>
       </div>
     </div>
   </section>
@@ -18,10 +19,16 @@
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+import data from '~/api/data.json'
 
 export default {
   components: {
     AppLogo
+  },
+  data() {
+    return {
+      data: data
+    }
   }
 }
 </script>
@@ -54,6 +61,8 @@ export default {
 
 .links {
   padding-top: 15px;
+  display: flex;
+  justify-content: center;
 }
 </style>
 
