@@ -1,6 +1,6 @@
-# self-maintenance
+# このリポジトリは何か?
 
-> 自己点検システム
+[surveyjs](https://surveyjs.io/Overview/Library/)をNuxtで使ってみたサンプル
 
 ## Build Setup
 
