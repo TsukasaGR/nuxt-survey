@@ -1,19 +1,6 @@
 <template>
   <section class="container">
-    <!--<div>-->
-      <!--<app-logo/>-->
-      <!--<h1 class="title">-->
-        <!--self-maintenance-->
-      <!--</h1>-->
-      <!--<h2 class="subtitle">-->
-        <!--自己点検システム-->
-      <!--</h2>-->
-      <!--<div class="links">-->
-        <!--<div :key="object.title" v-for="object in data.data">-->
-          <!--<nuxt-link :to="{ name: 'question-id', params: {id: object.id} }" tag="a" class="button&#45;&#45;grey">{{ object.title }}</nuxt-link>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
+    <h2 style="text-align: left; margin-bottom: 20px;">ダッシュボード</h2>
     <div class="box">
       <div class="box-header" style="background-color: #e62a76;">
         期限切れのタスク

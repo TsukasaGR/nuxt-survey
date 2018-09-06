@@ -1,7 +1,9 @@
 <template>
   <header class="header">
     <div class="logo-area">
-      <p>自己点検システム</p>
+      <nuxt-link to="/" tag="a">
+        自己点検システム
+      </nuxt-link>
     </div>
     <div class="menu-area">
       <div class="menu-toggle">
@@ -15,33 +17,23 @@
           </nuxt-link>
         </div>
         <div class="menu-block" @click="menuToggle()">
-          <nuxt-link to="/timeline" tag="a">
-            タイムライン
-          </nuxt-link>
-        </div>
-        <div class="menu-block" @click="menuToggle()">
-          <nuxt-link to="/egos" tag="a">
-            ego
-          </nuxt-link>
-        </div>
-        <div class="menu-block" @click="menuToggle()">
-          <nuxt-link to="/message" tag="a">
-            メッセージ
-          </nuxt-link>
-        </div>
-        <div class="menu-block" @click="menuToggle()">
           <nuxt-link to="/dashboard" tag="a">
             ダッシュボード
           </nuxt-link>
         </div>
         <div class="menu-block" @click="menuToggle()">
           <nuxt-link to="/egos/create" tag="a">
-            ego新規登録
+            未回答タスク
           </nuxt-link>
         </div>
         <div class="menu-block" @click="menuToggle()">
           <nuxt-link to="/diaries/create" tag="a">
-            日記登録
+            回答済みタスク
+          </nuxt-link>
+        </div>
+        <div class="menu-block" @click="menuToggle()">
+          <nuxt-link to="/diaries/create" tag="a">
+            終了済みタスク
           </nuxt-link>
         </div>
         <div class="menu-block" @click="menuToggle()">
@@ -83,9 +75,6 @@ export default {
    align-items: center;
    .logo-area {
      flex: 1;
-     .logo {
-       height: 40px;
-     }
    }
    .menu-area {
      @include mq(sm) {
