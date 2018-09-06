@@ -1,0 +1,23 @@
+.variable {
+  font-weight: bold;
+  .child {
+    color: blue;
+  }
+}
+
+$sp: 'only screen and (max-width: 767px)';
+$pc: 'only screen and (min-width: 768px)';
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+$base-color: #37534e;
+$theme-color: #023365;
+$sub-color: #6d6f6c;
+$border-color: #dcdedb;
+
+$title-font: 'Caveat', 'cursive';

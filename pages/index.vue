@@ -1,17 +1,109 @@
 <template>
   <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        self-maintenance
-      </h1>
-      <h2 class="subtitle">
-        自己点検システム
-      </h2>
-      <div class="links">
-        <div :key="object.title" v-for="object in data.data">
-          <nuxt-link :to="{ name: 'question-id', params: {id: object.id} }" tag="a" class="button--grey">{{ object.title }}</nuxt-link>
-        </div>
+    <!--<div>-->
+      <!--<app-logo/>-->
+      <!--<h1 class="title">-->
+        <!--self-maintenance-->
+      <!--</h1>-->
+      <!--<h2 class="subtitle">-->
+        <!--自己点検システム-->
+      <!--</h2>-->
+      <!--<div class="links">-->
+        <!--<div :key="object.title" v-for="object in data.data">-->
+          <!--<nuxt-link :to="{ name: 'question-id', params: {id: object.id} }" tag="a" class="button&#45;&#45;grey">{{ object.title }}</nuxt-link>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="box">
+      <div class="box-header" style="background-color: #e62a76;">
+        期限切れのタスク
+      </div>
+      <div class="box-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>期限</th>
+              <th>年度</th>
+              <th>設問</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">
+              <nuxt-link :to="{ name: 'question-id', params: {id: data.data[1].id} }" tag="a">
+                4
+              </nuxt-link>
+            </th>
+            <td>2日前</td>
+            <td>2018</td>
+            <td>○○アンケート</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-header" style="background-color: #00a8b5;">
+        回答済みのタスク
+      </div>
+      <div class="box-body">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>年度</th>
+            <th>設問</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">
+              <nuxt-link :to="{ name: 'question-id', params: {id: data.data[0].id} }" tag="a">
+                3
+              </nuxt-link>
+            </th>
+            <td>2018</td>
+            <td>××アンケート</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-header" style="background-color: #fbb901;">
+        終了したタスク
+      </div>
+      <div class="box-body">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>年度</th>
+            <th>設問</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">
+              <nuxt-link :to="{ name: 'question-id', params: {id: data.data[0].id} }" tag="a">
+                2
+              </nuxt-link>
+            </th>
+            <td>2017</td>
+            <td>○○アンケート</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <nuxt-link :to="{ name: 'question-id', params: {id: data.data[0].id} }" tag="a">
+                1
+              </nuxt-link>
+            </th>
+            <td>2017</td>
+            <td>××アンケート</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -33,36 +125,30 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .container {
-  min-height: 100vh;
+  margin-top: 60px;
+  min-height: 90vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-  display: flex;
-  justify-content: center;
+  @include mq() {
+    padding: 40px 80px;
+  }
+  table {
+    margin: 0;
+  }
+  .box {
+    border: 1px solid $border-color;
+    margin-bottom: 30px;
+    width: 100%;
+    .box-header {
+      padding: 10px 5px;
+      color: #fff;
+    }
+    .box-body {
+    }
+  }
 }
 </style>
 
