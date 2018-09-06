@@ -44,8 +44,8 @@ export default {
     var model = new SurveyVue.Model(this.target.prop)
     model.onComplete.add((ret) => {
         console.log(ret)
-        alert(JSON.stringify(ret.data))
-        alert('回答完了')
+        // alert(JSON.stringify(ret.data))
+        // alert('回答完了')
       }
     )
     return {

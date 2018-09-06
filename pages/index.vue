@@ -120,7 +120,7 @@ export default {
   flex-direction: column;
   text-align: center;
   @include mq() {
-    padding: 40px 80px;
+    padding: 40px;
   }
   table {
     margin: 0;

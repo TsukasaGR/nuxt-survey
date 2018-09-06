@@ -2,41 +2,130 @@
   "data": [
     {
       "id": "1",
-      "title": "アンケートA",
+      "title": "アンケートB",
       "prop": {
-        "title": "○○アンケート",
+        "title": "Product Feedback Survey Example",
+        "showProgressBar": "top",
         "pages": [
           {
-            "name": "page1",
-            "elements": [
+            "questions": [
               {
-                "type": "text",
-                "name": "question1",
-                "title": "テスト質問"
+                "type": "matrix",
+                "name": "Quality",
+                "title": "Please indicate if you agree or disagree with the following statements",
+                "columns": [
+                  {
+                    "value": 1,
+                    "text": "Strongly Disagree"
+                  },
+                  {
+                    "value": 2,
+                    "text": "Disagree"
+                  },
+                  {
+                    "value": 3,
+                    "text": "Neutral"
+                  },
+                  {
+                    "value": 4,
+                    "text": "Agree"
+                  },
+                  {
+                    "value": 5,
+                    "text": "Strongly Agree"
+                  }
+                ],
+                "rows": [
+                  {
+                    "value": "affordable",
+                    "text": "Product is affordable"
+                  },
+                  {
+                    "value": "does what it claims",
+                    "text": "Product does what it claims"
+                  },
+                  {
+                    "value": "better then others",
+                    "text": "Product is better than other products on the market"
+                  },
+                  {
+                    "value": "easy to use",
+                    "text": "Product is easy to use"
+                  }
+                ]
               },
               {
-                "type": "checkbox",
-                "name": "question2",
-                "isRequired": true,
+                "type": "rating",
+                "name": "satisfaction",
+                "title": "How satisfied are you with the Product?",
+                "mininumRateDescription": "Not Satisfied",
+                "maximumRateDescription": "Completely satisfied"
+              },
+              {
+                "type": "rating",
+                "name": "recommend friends",
+                "visibleIf": "{satisfaction} > 3",
+                "title": "How likely are you to recommend the Product to a friend or co-worker?",
+                "mininumRateDescription": "Will not recommend",
+                "maximumRateDescription": "I will recommend"
+              },
+              {
+                "type": "comment",
+                "name": "suggestions",
+                "title": "What would make you more satisfied with the Product?"
+              }
+            ]
+          },
+          {
+            "questions": [
+              {
+                "type": "radiogroup",
+                "name": "price to competitors",
+                "title": "Compared to our competitors, do you feel the Product is",
                 "choices": [
-                  "item1",
-                  "item2",
-                  "item3"
+                  "Less expensive",
+                  "Priced about the same",
+                  "More expensive",
+                  "Not sure"
                 ]
               },
               {
                 "type": "radiogroup",
-                "name": "question3",
+                "name": "price",
+                "title": "Do you feel our current price is merited by our product?",
                 "choices": [
-                  "item1",
-                  "item2",
-                  "item3"
+                  "correct|Yes, the price is about right",
+                  "low|No, the price is too low for your product",
+                  "high|No, the price is too high for your product"
+                ]
+              },
+              {
+                "type": "multipletext",
+                "name": "pricelimit",
+                "title": "What is the... ",
+                "items": [
+                  {
+                    "name": "mostamount",
+                    "title": "Most amount you would every pay for a product like ours"
+                  },
+                  {
+                    "name": "leastamount",
+                    "title": "The least amount you would feel comfortable paying"
+                  }
                 ]
               }
             ]
+          },
+          {
+            "questions": [
+              {
+                "type": "text",
+                "name": "email",
+                "title": "Thank you for taking our survey. Please enter your email address, then press the Submit button."
+              }
+            ]
           }
-        ],
-        "showProgressBar": "bottom"
+        ]
       }
     },
     {
@@ -45,6 +134,7 @@
       "prop": {
         "title": "○○アンケート",
         "showProgressBar": "top",
+        "completedHtml": "<p><h4>アンケートにご回答頂きありがとうございました。</h4></p>",
         "pages": [
         {
           "questions": [
@@ -75,33 +165,35 @@
             }
           ]
         }, {
-          "questions": [{
-            "type": "radiogroup",
-            "name": "price to competitors",
-            "title": "Compared to our competitors, do you feel the Product is",
-            "choices": ["Less expensive", "Priced about the same", "More expensive", "Not sure"]
-          },
+          "questions": [
             {
               "type": "radiogroup",
-              "name": "price",
-              "title": "Do you feel our current price is merited by our product?",
-              "choices": ["correct|Yes, the price is about right",
-                "low|No, the price is too low for your product",
-                "high|No, the price is too high for your product"
+              "name": "price to competitors",
+              "title": "受け取りたくない迷惑な電子メール（迷惑メール）を減らすための対応として、次の中で誤っているものはどれでしょうか？",
+              "choices": [
+                "長くて分かりにくいメールアドレスを使う。",
+                "あらかじめ決めておいたメールアドレスやドメインからの電子メールしか受け取らないようにしておく。",
+                "電子メールを送ってきた人に返事を書いて、もう送ってこないように伝える。"
               ]
             },
             {
-              "type": "multipletext",
-              "name": "pricelimit",
-              "title": "What is the... ",
-              "items": [{
-                "name": "mostamount",
-                "title": "Most amount you would every pay for a product like ours"
-              },
-                {
-                  "name": "leastamount",
-                  "title": "The least amount you would feel comfortable paying"
-                }
+              "type": "radiogroup",
+              "name": "price to competitors",
+              "title": "受け取りたくない迷惑な電子メール（迷惑メール）を減らすための対応として、次の中で誤っているものはどれでしょうか？",
+              "choices": [
+                "長くて分かりにくいメールアドレスを使う。",
+                "あらかじめ決めておいたメールアドレスやドメインからの電子メールしか受け取らないようにしておく。",
+                "電子メールを送ってきた人に返事を書いて、もう送ってこないように伝える。"
+              ]
+            },
+            {
+              "type": "radiogroup",
+              "name": "price to competitors",
+              "title": "受け取りたくない迷惑な電子メール（迷惑メール）を減らすための対応として、次の中で誤っているものはどれでしょうか？",
+              "choices": [
+                "長くて分かりにくいメールアドレスを使う。",
+                "あらかじめ決めておいたメールアドレスやドメインからの電子メールしか受け取らないようにしておく。",
+                "電子メールを送ってきた人に返事を書いて、もう送ってこないように伝える。"
               ]
             }
           ]
@@ -109,7 +201,7 @@
           "questions": [{
             "type": "text",
             "name": "email",
-            "title": "Thank you for taking our survey. Please enter your email address, then press the Submit button."
+            "title": "ご回答頂きありがとうございました。最後にメールアドレスを入力して完了ボタンをクリックして下さい。"
           }]
         }]
       }

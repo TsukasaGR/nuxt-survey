@@ -6,40 +6,40 @@
       </nuxt-link>
     </div>
     <div class="menu-area">
-      <div class="menu-toggle">
-        <i v-if="!showMenu" class="fa fa-angle-down" @click="menuToggle()"/>
-        <i v-else class="fa fa-angle-up" @click="menuToggle()"/>
-      </div>
-      <div :class="{show: showMenu, none: !showMenu}" class="menu-blocks">
-        <div class="menu-block sp-only-show" @click="menuToggle()">
-          <nuxt-link to="/" tag="a">
-            TOPへ
-          </nuxt-link>
-        </div>
-        <div class="menu-block" @click="menuToggle()">
-          <nuxt-link to="/dashboard" tag="a">
-            ダッシュボード
-          </nuxt-link>
-        </div>
-        <div class="menu-block" @click="menuToggle()">
-          <nuxt-link to="/egos/create" tag="a">
-            未回答タスク
-          </nuxt-link>
-        </div>
-        <div class="menu-block" @click="menuToggle()">
-          <nuxt-link to="/diaries/create" tag="a">
-            回答済みタスク
-          </nuxt-link>
-        </div>
-        <div class="menu-block" @click="menuToggle()">
-          <nuxt-link to="/diaries/create" tag="a">
-            終了済みタスク
-          </nuxt-link>
-        </div>
-        <div class="menu-block" @click="menuToggle()">
-          <vs-avatar vs-src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>
-        </div>
-      </div>
+      <!--<div class="menu-toggle">-->
+        <!--<i v-if="!showMenu" class="fa fa-angle-down" @click="menuToggle()"/>-->
+        <!--<i v-else class="fa fa-angle-up" @click="menuToggle()"/>-->
+      <!--</div>-->
+      <!--<div :class="{show: showMenu, none: !showMenu}" class="menu-blocks">-->
+        <!--<div class="menu-block sp-only-show" @click="menuToggle()">-->
+          <!--<nuxt-link to="/" tag="a">-->
+            <!--TOPへ-->
+          <!--</nuxt-link>-->
+        <!--</div>-->
+        <!--<div class="menu-block" @click="menuToggle()">-->
+          <!--<nuxt-link to="/dashboard" tag="a">-->
+            <!--ダッシュボード-->
+          <!--</nuxt-link>-->
+        <!--</div>-->
+        <!--<div class="menu-block" @click="menuToggle()">-->
+          <!--<nuxt-link to="/egos/create" tag="a">-->
+            <!--未回答タスク-->
+          <!--</nuxt-link>-->
+        <!--</div>-->
+        <!--<div class="menu-block" @click="menuToggle()">-->
+          <!--<nuxt-link to="/diaries/create" tag="a">-->
+            <!--回答済みタスク-->
+          <!--</nuxt-link>-->
+        <!--</div>-->
+        <!--<div class="menu-block" @click="menuToggle()">-->
+          <!--<nuxt-link to="/diaries/create" tag="a">-->
+            <!--終了済みタスク-->
+          <!--</nuxt-link>-->
+        <!--</div>-->
+        <!--<div class="menu-block" @click="menuToggle()">-->
+          <!--<vs-avatar vs-src="https://avatars2.githubusercontent.com/u/31676496?s=460&v=4"/>-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
   </header>
 </template>
