@@ -36,6 +36,7 @@ export default {
     Survey
   },
   data () {
+    console.log('aaaaaaaaaaa')
     for (const val of data.data) {
       if (this.$route.params.id === val.id) {
         this.target = val
