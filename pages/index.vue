@@ -113,29 +113,6 @@ export default {
 </script>
 
 <style lang="scss">
-.container {
-  margin-top: 60px;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  @include mq() {
-    padding: 40px;
-  }
-  table {
-    margin: 0;
-  }
-  .box {
-    border: 1px solid $border-color;
-    margin-bottom: 30px;
-    width: 100%;
-    .box-header {
-      padding: 10px 5px;
-      color: #fff;
-    }
-    .box-body {
-    }
-  }
-}
+
 </style>
 
