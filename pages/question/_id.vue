@@ -57,9 +57,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .question {
-  padding: 50px 300px;
+  @include mq() {
+    padding: 40px 200px;
+  }
+  @include mq(sm) {
+    padding: 40px;
+  }
+  padding: 50px 0;
 }
 .question h1 {
   margin-bottom: 50px;
